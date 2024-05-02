@@ -1,0 +1,43 @@
+#hexGrid {
+  display: grid;
+  grid-template-columns: repeat(10, calc(80px + 10px)); /* Adjust the number of columns and size of each hexagon as needed */
+  grid-auto-rows: calc(45.51px + 5px); /* Height of hexagons plus vertical gap */
+  grid-gap: 10px 0; /* Adjust the gap between hexagons vertically and horizontally as needed */
+  max-width: 1200px; /* Adjust the max-width as needed */
+  margin: 200px auto; /* Adjust the margin as needed */
+}
+
+.hexagon {
+  width: 80px;
+  height: 45.51px;
+  background-color: #ccc;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.hexagon:hover {
+  background-color: blue; /* Change color on hover */
+}
+
+.hexagon.clicked {
+  background-color: green; /* Change color when clicked */
+}
+
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+}
+
+.hexagon:before {
+  top: -22.75px;
+  border-bottom: 22.75px solid #ccc;
+}
+
+.hexagon:after {
+  bottom: -22.75px;
+  border-top: 22.75px solid #ccc;
+}
